@@ -1,72 +1,88 @@
 ---
-import { Twitter, Linkedin, Dribbble, Github, Mail } from "lucide-astro"
+import {Twitter, Linkedin, Dribbble, Github, Mail} from "lucide-astro"
 ---
 
 <footer class="mt-auto py-4 border-t border-gray-200">
-  <div class="max-w-6xl mx-auto">
-    <div class="flex flex-col md:flex-row justify-between items-center">
-      <div class="flex space-x-4 mb-4 md:mb-0">
-        <a href="https://x.com/Do_Nuss" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-gray-600">
-              <span class="sr-only">Twitter</span>
-              <Twitter />
-            </a>
-            <a href="https://www.linkedin.com/in/nussbaumer-dominik/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-gray-600">
-              <span class="sr-only">LinkedIn</span>
-              <Linkedin />
-            </a>
-            <a href="https://dribbble.com/nussbaumer-dominik" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-gray-600">
-              <span class="sr-only">Dribbble</span>
-              <Dribbble />
-            </a>
-            <a href="https://github.com/nussbaumer-dominik" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-gray-600">
-              <span class="sr-only">GitHub</span>
-              <Github />
-            </a>
-            <a href="mailto:dominik@nussbaumer.dev" class="text-gray-400 hover:text-gray-600">
-              <span class="sr-only">Email</span>
-              <Mail />
-            </a>
-      </div>
-      <div class="flex items-center space-x-4">
-        <div id="clock" class="text-sm text-gray-500"></div>
-        <img src="dragonite.gif" alt="Dragonite Sprite" class="w-8 h-8" />
-      </div>
+    <div class="max-w-6xl mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+            <div class="flex space-x-4 mb-4 md:mb-0">
+                <a href="https://x.com/Do_Nuss" target="_blank" rel="noopener noreferrer"
+                   class="text-gray-400 hover:text-gray-600">
+                    <span class="sr-only">Twitter</span>
+                    <Twitter/>
+                </a>
+                <a href="https://www.linkedin.com/in/nussbaumer-dominik/" target="_blank" rel="noopener noreferrer"
+                   class="text-gray-400 hover:text-gray-600">
+                    <span class="sr-only">LinkedIn</span>
+                    <Linkedin/>
+                </a>
+                <a href="https://dribbble.com/nussbaumer-dominik" target="_blank" rel="noopener noreferrer"
+                   class="text-gray-400 hover:text-gray-600">
+                    <span class="sr-only">Dribbble</span>
+                    <Dribbble/>
+                </a>
+                <a href="https://github.com/nussbaumer-dominik" target="_blank" rel="noopener noreferrer"
+                   class="text-gray-400 hover:text-gray-600">
+                    <span class="sr-only">GitHub</span>
+                    <Github/>
+                </a>
+                <a href="mailto:dominik@nussbaumer.dev" class="text-gray-400 hover:text-gray-600">
+                    <span class="sr-only">Email</span>
+                    <Mail/>
+                </a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <div id="clock" class="text-sm text-gray-500"></div>
+                <img src="dragonite.gif" alt="Dragonite Sprite" class="w-8 h-8"/>
+            </div>
+        </div>
     </div>
-  </div>
 </footer>
 
 <script>
-  function updateClock() {
-    const now = new Date();
-    const options = { weekday: 'short', hour: '2-digit', minute: '2-digit', hour12: false, timeZone: 'Europe/Vienna' };
-    document.getElementById('clock').textContent = now.toLocaleTimeString('en-AT', options) + ' UTC+1';
-  }
-
-  updateClock();
-  setInterval(updateClock, 1000);
-
-  const clockElement = document.getElementById('clock');
-  let flagElement = null;
-
-  clockElement.addEventListener('mouseenter', () => {
-    if (!flagElement) {
-      flagElement = document.createElement('span');
-      flagElement.textContent = '🇦🇹';
-      flagElement.style.position = 'absolute';
-      flagElement.style.bottom = '100%';
-      flagElement.style.left = '50%';
-      flagElement.style.transform = 'translateX(-50%)';
-      flagElement.style.marginBottom = '0.5rem';
-      flagElement.style.fontSize = '1.5rem';
-      clockElement.style.position = 'relative';
-      clockElement.appendChild(flagElement);
+    function updateClock() {
+        const now = new Date();
+        const options: Intl.DateTimeFormatOptions = {
+            weekday: 'short',
+            hour: '2-digit',
+            minute: '2-digit',
+            hour12: false,
+            timeZone: 'Europe/Vienna'
+        };
+        const clockElement = document.getElementById('clock');
+        if (clockElement) {
+            clockElement.textContent = now.toLocaleTimeString('en-AT', options) + ' UTC+1';
+        }
     }
-  });
 
-  clockElement.addEventListener('mouseleave', () => {
-    if (flagElement) {
-      clockElement.removeChild(flagElement);
-      flagElement = null;
+    updateClock();
+    setInterval(updateClock, 1000);
+
+    const clockElement = document.getElementById('clock');
+    let flagElement: HTMLSpanElement | null = null;
+
+    if (clockElement) {
+        clockElement.addEventListener('mouseenter', () => {
+            if (!flagElement) {
+                flagElement = document.createElement('span');
+                flagElement.textContent = '🇦🇹';
+                flagElement.style.position = 'absolute';
+                flagElement.style.bottom = '100%';
+                flagElement.style.left = '50%';
+                flagElement.style.transform = 'translateX(-50%)';
+                flagElement.style.marginBottom = '0.5rem';
+                flagElement.style.fontSize = '1.5rem';
+                clockElement.style.position = 'relative';
+                clockElement.appendChild(flagElement);
+            }
+        });
+
+        clockElement.addEventListener('mouseleave', () => {
+            if (flagElement) {
+                clockElement.removeChild(flagElement);
+                flagElement = null;
+            }
+        });
     }
-  });
 </script>
+
