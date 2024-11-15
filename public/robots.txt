@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nussbaumer.dev/sitemap-index.xml

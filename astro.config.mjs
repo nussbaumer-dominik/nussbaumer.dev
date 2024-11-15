@@ -1,7 +1,11 @@
 // @ts-check
 import {defineConfig} from 'astro/config';
 import tailwind from '@astrojs/tailwind';
+import preact from '@astrojs/preact';
+
+import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-    integrations: [tailwind()],
+    site: "https://nussbaumer.dev",
+    integrations: [tailwind(), preact(), sitemap()],
 });
