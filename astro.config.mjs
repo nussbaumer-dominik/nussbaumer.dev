@@ -8,4 +8,13 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
     site: "https://nussbaumer.dev",
     integrations: [tailwind(), preact(), sitemap()],
+    vite: {
+        build: {
+            rollupOptions: {
+                output: {
+                    entryFileNames: '[name]-[hash].js',
+                },
+            },
+        },
+    },
 });
