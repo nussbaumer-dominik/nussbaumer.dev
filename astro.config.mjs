@@ -7,7 +7,13 @@ import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
     site: "https://nussbaumer.dev",
-    integrations: [tailwind(), preact(), sitemap()],
+    integrations: [
+        tailwind({
+            applyBaseStyles: false,
+        }),
+        preact(),
+        sitemap()
+    ],
     vite: {
         build: {
             rollupOptions: {
