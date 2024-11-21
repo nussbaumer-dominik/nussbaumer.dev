@@ -1,12 +1,25 @@
 ---
-import UnderConstruction from './UnderConstruction.astro';
+import TimeLine from "./TimeLine.astro";
+
+const timeLineItems = [
+    {
+        date: "October 2023 - Present",
+        title: "Master in Software Engineering & Internet Computing @ TU Wien",
+    },
+    {
+        date: "October 2019 - October 2024",
+        title: "Bachelor in Software & Information Engineering @ TU Wien",
+    },
+    {
+        date: "September 2013 - May 2018",
+        title: "IT & Media Matura @ HTL Rennweg",
+    }
+]
 ---
 
 <section class="mb-10 lg:relative">
     <h2 class="text-sm font-semibold text-gray-400 mb-4 static lg:mb-0 lg:absolute" style="left:-20%">
         EDUCATION
     </h2>
-    <div class="w-full">
-        <UnderConstruction />
-    </div>
+    <TimeLine items={timeLineItems}/>
 </section>
