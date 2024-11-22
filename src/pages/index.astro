@@ -6,9 +6,6 @@ import Work from '../components/Work.astro';
 import Projects from '../components/Projects.astro';
 import Footer from '../components/Footer.astro';
 import Education from "../components/Education.astro";
-import {ScreenSize} from "../components/ScreenSize";
-
-const isDev = import.meta.env.DEV;
 ---
 
 <Layout title="Dominik Nussbaumer | Full Stack Engineer">
@@ -22,6 +19,4 @@ const isDev = import.meta.env.DEV;
         </main>
         <Footer/>
     </div>
-    {isDev &&
-            <ScreenSize client:load/>}
 </Layout>

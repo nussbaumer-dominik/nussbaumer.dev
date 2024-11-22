@@ -1,0 +1,15 @@
+---
+const {title, isMobile} = Astro.props
+---
+<section class:list={["mb-10 lg:relative", {"md:flex": isMobile}]}>
+    <h2
+            class:list={[
+                "text-sm font-semibold text-gray-400 mb-4 lg:mb-0",
+                {"hidden lg:block absolute": isMobile},
+                {"static lg:absolute": !isMobile}
+            ]} style="left:-20%"
+    >
+        {title}
+    </h2>
+    <slot/>
+</section>

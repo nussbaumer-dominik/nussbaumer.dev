@@ -1,13 +1,9 @@
 ---
+import SectionElement from "./SectionElement.astro";
 ---
-
-<section class="mb-10 md:flex relative">
-  <h2 class="text-sm leading-6 font-semibold text-gray-400 mb-4 hidden lg:mb-0 lg:block absolute" style="left:-20%">
-    ABOUT
-  </h2>
-  <div>
+<SectionElement title="ABOUT" isMobile={true}>
     <p class="text-lg leading-6">
-      I'm a Full Stack Engineer from Austria that loves design and everything about the web. Currently I am writing my master's thesis in distributed systems at the University of Technology Vienna.
+        I'm a Full Stack Engineer from Austria that loves design and everything about the web. Currently I am writing my
+        master's thesis in distributed systems at the University of Technology Vienna.
     </p>
-  </div>
-</section>
+</SectionElement>

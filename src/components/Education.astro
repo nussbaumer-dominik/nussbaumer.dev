@@ -1,5 +1,6 @@
 ---
 import TimeLine from "./TimeLine.astro";
+import SectionElement from "./SectionElement.astro";
 
 const timeLineItems = [
     {
@@ -16,10 +17,6 @@ const timeLineItems = [
     }
 ]
 ---
-
-<section class="mb-10 lg:relative">
-    <h2 class="text-sm font-semibold text-gray-400 mb-4 static lg:mb-0 lg:absolute" style="left:-20%">
-        EDUCATION
-    </h2>
+<SectionElement title="EDUCATION">
     <TimeLine items={timeLineItems}/>
-</section>
+</SectionElement>
