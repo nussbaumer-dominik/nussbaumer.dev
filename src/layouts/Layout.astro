@@ -2,6 +2,14 @@
 import "../styles/base.css";
 import {ScreenSize} from "../components/ScreenSize";
 const {title} = Astro.props;
+const meta = {
+    title: title,
+    author: "Dominik Nussbaumer",
+    url: "https://nussbaumer.dev",
+    description: "Dominik Nussbaumer | Full Stack Engineer based in Austria, who loves the Web and is interested in clean design.",
+    keywords: "Dominik Nussbaumer, Personal Portfolio, Full Stack Engineer, Developer, Angular, HTML, CSS, Javascript, Java, Kotlin, Microservices, Kubernetes, Bachelor of Science, Computer Science, Software Engineering",
+    ogType: "website",
+}
 
 const isProd = import.meta.env.PROD;
 const isDev = import.meta.env.DEV;
@@ -14,13 +22,12 @@ const isDev = import.meta.env.DEV;
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>{title}</title>
     <link rel="sitemap" href="/sitemap-index.xml"/>
-    <meta name="description"
-          content="Dominik Nussbaumer | Full Stack Engineer based in Austria, who loves the Web and is interested in clean design.">
-    <meta name="keywords"
-          content="Dominik Nussbaumer, Personal Portfolio, Full Stack Engineer, Developer, Angular, HTML, CSS, Javascript, Java, Kotlin, Microservices, Kubernetes, Bachelor of Science, Computer Science, Software Engineering">
-    <meta name="author" content="Dominik Nussbaumer">
+    <link rel="canonical" href={meta.url}/>
+    <meta name="description" content={meta.description}/>
+    <meta name="keywords" content={meta.keywords}/>
+    <meta name="author" content={meta.author}/>
     <!-- Add SEO tags, favicon, etc. -->
-    {isProd && <script defer data-domain="nussbaumer.dev" src="https://analytics.spritkenig.com/js/script.js" data-category="analytics"/>}
+    <!-- {isProd && <script defer data-domain="nussbaumer.dev" src="https://analytics.spritkenig.com/js/script.js" data-category="analytics"/>} -->
     <!-- ADD Cookiebanner component and only add script if ok -->
     <link rel="icon" href="/favicon/favicon.ico" sizes="32x32"/>
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/>
@@ -34,8 +41,15 @@ const isDev = import.meta.env.DEV;
     <link rel="manifest" href="favicon/site.webmanifest"/>
     <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#fff"/>
     <!-- Open Graph Tags (Facebook) -->
-    <meta property="og:type" content="website"/>
-    <meta property="og:title" content={title}/>
+    <meta property="og:type" content={meta.ogType}/>
+    <meta property="og:title" content={meta.title}/>
+    <meta property="og:description" content={meta.description}/>
+    <meta property="og:url" content={meta.url}/>
+    <meta property="og:site-name" content="nussbaumer.dev"/>
+    <meta property="og:image" content="https://nussbaumer.dev/Logo.png"/>
+    <meta property="og:image:width" content="130"/>
+    <meta property="og:image:height" content="130"/>
+    <meta property="og:image:alt" content="Dominik Nussbaumer Logo"/>
     <!--{permalink && <meta property="og:url" content={permalink} />}
     {description && <meta property="og:description" content={description} />}
     {image && <meta property="og:image" content={image} />}
