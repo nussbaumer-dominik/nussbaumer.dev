@@ -5,6 +5,8 @@ import solid from "@astrojs/solid-js";
 
 import sitemap from '@astrojs/sitemap';
 
+import playformCompress from "@playform/compress";
+
 export default defineConfig({
     site: "https://nussbaumer.dev",
     integrations: [
@@ -12,7 +14,8 @@ export default defineConfig({
             applyBaseStyles: false,
         }),
         solid(),
-        sitemap()
+        sitemap(),
+        playformCompress()
     ],
     vite: {
         build: {

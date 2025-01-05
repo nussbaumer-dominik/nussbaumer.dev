@@ -1,4 +1,5 @@
 ---
+import {SEO} from "astro-seo"
 import "../styles/base.css";
 import {ScreenSize} from "../components/ScreenSize";
 const {
@@ -12,6 +13,8 @@ const meta = {
     description: "Dominik Nussbaumer | Full Stack Engineer based in Austria, who loves the Web and is interested in clean design.",
     keywords: "Dominik Nussbaumer, Personal Portfolio, Full Stack Engineer, Developer, Angular, HTML, CSS, Javascript, Java, Kotlin, Microservices, Kubernetes, Bachelor of Science, Computer Science, Software Engineering",
     ogType: "website",
+    image: "https://nussbaumer.dev/nussbaumer-og.png",
+    imageAlt: "Dominik Nussbaumer Logo"
 }
 
 const isProd = import.meta.env.PROD;
@@ -21,15 +24,45 @@ const isDev = import.meta.env.DEV;
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>{title}</title>
-    <link rel="sitemap" href="/sitemap-index.xml"/>
-    <link rel="canonical" href={meta.url}/>
-    <meta name="description" content={meta.description}/>
-    <meta name="keywords" content={meta.keywords}/>
+    <SEO
+            title={meta.title}
+            description={meta.description}
+            canonical={meta.url}
+            charset="UTF-8"
+            openGraph={{
+                basic: {
+                    title: meta.title,
+                    type: meta.ogType,
+                    url: meta.url,
+                    image: meta.image,
+                },
+                image: {
+                    url: meta.image,
+                    width: 1200,
+                    height: 600,
+                    alt: meta.imageAlt,
+                },
+                optional: {
+                    description: meta.description,
+                    locale: "en",
+                }
+            }}
+            twitter={{
+                creator: "Do_Nuss",
+                card: "summary_large_image",
+                description: meta.description,
+                title: meta.title,
+                site: meta.url,
+                image: meta.image,
+                imageAlt: meta.imageAlt,
+            }}
+    />
     <meta name="author" content={meta.author}/>
-    <!-- Add SEO tags, favicon, etc. -->
+    <meta property="og:site-name" content="nussbaumer.dev"/>
+    <meta name="keywords" content={meta.keywords}/>
+    <link rel="sitemap" href="/sitemap-index.xml"/>
+
     <!-- {isProd && <script defer data-domain="nussbaumer.dev" src="https://analytics.spritkenig.com/js/script.js" data-category="analytics"/>} -->
     <!-- ADD Cookiebanner component and only add script if ok -->
     <link rel="icon" href="/favicon/favicon.ico" sizes="32x32"/>
@@ -43,26 +76,6 @@ const isDev = import.meta.env.DEV;
     />
     <link rel="manifest" href="favicon/site.webmanifest"/>
     <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#fff"/>
-    <!-- Open Graph Tags (Facebook) -->
-    <meta property="og:type" content={meta.ogType}/>
-    <meta property="og:title" content={meta.title}/>
-    <meta property="og:description" content={meta.description}/>
-    <meta property="og:url" content={meta.url}/>
-    <meta property="og:site-name" content="nussbaumer.dev"/>
-    <meta property="og:image" content="https://nussbaumer.dev/nussbaumer-og.png"/>
-    <meta property="og:image:width" content="1200"/>
-    <meta property="og:image:height" content="600"/>
-    <meta property="og:image:alt" content="Dominik Nussbaumer Logo"/>
-    <!--{permalink && <meta property="og:url" content={permalink} />}
-    {description && <meta property="og:description" content={description} />}
-    {image && <meta property="og:image" content={image} />}
-    -->
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image"/>
-    <meta property="twitter:title" content={title}/>
-    <!--{permalink && <meta property="twitter:url" content={permalink} />}
-    {description && <meta property="twitter:description" content={description} />}
-    {image && <meta property="twitter:image" content={image} />}-->
 </head>
 <body class="min-h-screen bg-white text-gray-800">
 <slot/>
