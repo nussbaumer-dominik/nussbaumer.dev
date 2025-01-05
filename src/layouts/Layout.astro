@@ -1,11 +1,14 @@
 ---
 import "../styles/base.css";
 import {ScreenSize} from "../components/ScreenSize";
-const {title} = Astro.props;
+const {
+    title = "Dominik Nussbaumer | Full Stack Engineer",
+    url = "https://nussbaumer.dev"
+} = Astro.props;
 const meta = {
     title: title,
     author: "Dominik Nussbaumer",
-    url: "https://nussbaumer.dev",
+    url: url,
     description: "Dominik Nussbaumer | Full Stack Engineer based in Austria, who loves the Web and is interested in clean design.",
     keywords: "Dominik Nussbaumer, Personal Portfolio, Full Stack Engineer, Developer, Angular, HTML, CSS, Javascript, Java, Kotlin, Microservices, Kubernetes, Bachelor of Science, Computer Science, Software Engineering",
     ogType: "website",
