@@ -17,8 +17,8 @@ export default function Clock() {
 
     onMount(() => {
         updateClock();
-        const interval = setInterval(updateClock, 1000);
-        onCleanup(() => clearInterval(interval));
+        const interval = window.setInterval(updateClock, 1000);
+        onCleanup(() => window.clearInterval(interval));
     });
 
     return <div class="text-sm text-gray-500">{time()}</div>;
