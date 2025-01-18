@@ -2,6 +2,13 @@
 import {SEO} from "astro-seo"
 import "../styles/base.css";
 import {ScreenSize} from "../components/ScreenSize";
+
+interface Props {
+    title?: string,
+    url?: string,
+    children?: any,
+}
+
 const {
     title = "Dominik Nussbaumer | Full Stack Engineer",
     url = "https://nussbaumer.dev"
