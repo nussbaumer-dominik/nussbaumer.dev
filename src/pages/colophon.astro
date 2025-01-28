@@ -5,50 +5,60 @@ import SectionElement from "../components/SectionElement.astro";
 import Header from "../components/Header.astro";
 ---
 <Layout url="https://nussbaumer.dev/colophon/">
-  <div class="flex flex-col min-h-screen max-w-2xl mx-auto pt-12 px-4 lg:px-8">
-    <Header/>
-    <h2 class="text-2xl font-semibold mb-8">Colophon</h2>
+    <div class="flex flex-col min-h-screen max-w-2xl mx-auto pt-12 px-4 lg:px-8">
+        <div class="motion-preset-slide-up-md motion-duration-1000" transition:name="Header" transition:persist>
+            <Header/>
+        </div>
+        <main class="motion-preset-slide-up-md motion-duration-1000 motion-delay-200">
+            <h2 class="text-2xl font-semibold mb-8">Colophon</h2>
 
-    <div class="space-y-6">
-      <SectionElement title="TECH STACK">
-        <ul class="space-y-2 text-gray-900">
-          <li>Built with <a href="https://astro.build" class="text-blue-600 hover:underline">Astro.js</a></li>
-          <li>Dynamic components powered by <a href="https://www.solidjs.com/" class="text-blue-600 hover:underline">SolidJs</a>
-          </li>
-          <li>Styled using <a href="https://tailwindcss.com" class="text-blue-600 hover:underline">Tailwind
-            CSS</a></li>
-          <li>Hosted on <a href="https://cloudflare.com" class="text-blue-600 hover:underline">Cloudflare</a>
-          </li>
-          <li>Icons from <a href="https://lucide.dev/" class="text-blue-600 hover:underline">Lucide</a></li>
-        </ul>
-      </SectionElement>
+            <div class="space-y-6">
+                <SectionElement title="TECH STACK">
+                    <ul class="space-y-2 text-gray-900">
+                        <li>Built with <a href="https://astro.build" class="text-blue-600 hover:underline">Astro.js</a>
+                        </li>
+                        <li>Dynamic components powered by <a href="https://www.solidjs.com/"
+                                                             class="text-blue-600 hover:underline">SolidJs</a>
+                        </li>
+                        <li>Styled using <a href="https://tailwindcss.com" class="text-blue-600 hover:underline">Tailwind
+                            CSS</a></li>
+                        <li>Hosted on <a href="https://cloudflare.com"
+                                         class="text-blue-600 hover:underline">Cloudflare</a>
+                        </li>
+                        <li>Icons from <a href="https://lucide.dev/" class="text-blue-600 hover:underline">Lucide</a>
+                        </li>
+                    </ul>
+                </SectionElement>
 
-      <SectionElement title="TYPOGRAPHY">
-        <p class="text-gray-900">
-          This site uses the system font stack for optimal performance and native feel.
-        </p>
-      </SectionElement>
+                <SectionElement title="TYPOGRAPHY">
+                    <p class="text-gray-900">
+                        This site uses the system font stack for optimal performance and native feel.
+                    </p>
+                </SectionElement>
 
-      <SectionElement title="SOURCE">
-        <p class="text-gray-900">
-          The source code for this website is available on
-          <a href="https://github.com/nussbaumer-dominik/nussbaumer.dev"
-             class="text-blue-600 hover:underline">
-            GitHub
-          </a>
-        </p>
-      </SectionElement>
+                <SectionElement title="SOURCE">
+                    <p class="text-gray-900">
+                        The source code for this website is available on
+                        <a href="https://github.com/nussbaumer-dominik/nussbaumer.dev"
+                           class="text-blue-600 hover:underline">
+                            GitHub
+                        </a>
+                    </p>
+                </SectionElement>
 
-      <SectionElement title="LAST UPDATE">
-        <p class="text-gray-900">
-            {new Date().toLocaleDateString('en', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric'
-            })}
-        </p>
-      </SectionElement>
+                <SectionElement title="LAST UPDATE">
+                    <p class="text-gray-900">
+                        {new Date().toLocaleDateString('en', {
+                            year: 'numeric',
+                            month: 'long',
+                            day: 'numeric'
+                        })}
+                    </p>
+                </SectionElement>
+            </div>
+        </main>
+        <div class="mt-auto motion-preset-slide-up-md motion-duration-1000 motion-delay-400" transition:name="Footer" transition:persist>
+            <Footer/>
+        </div>
     </div>
-    <Footer/>
-  </div>
 </Layout>
