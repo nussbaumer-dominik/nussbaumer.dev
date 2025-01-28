@@ -2,7 +2,6 @@
 import {SEO} from "astro-seo"
 import "../styles/base.css";
 import {ScreenSize} from "../components/ScreenSize";
-import {ClientRouter} from 'astro:transitions';
 
 interface Props {
     title?: string,
@@ -84,7 +83,6 @@ const isDev = import.meta.env.DEV;
     />
     <link rel="manifest" href="favicon/site.webmanifest"/>
     <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#fff"/>
-    <ClientRouter/>
 </head>
 <body class="min-h-screen bg-white text-gray-800">
 <slot/>
