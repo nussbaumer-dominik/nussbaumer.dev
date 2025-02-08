@@ -1,62 +1,18 @@
 ---
 import {Image} from "astro:assets"
-import {Twitter, Linkedin, Dribbble, Github, Mail} from "lucide-astro"
-import Clock from "./Clock.tsx"
-
-const socials = [
-    {
-        name: "Twitter",
-        icon: Twitter,
-        link: "https://x.com/Do_Nuss"
-    },
-    {
-        name: "LinkedIn",
-        icon: Linkedin,
-        link: "https://www.linkedin.com/in/nussbaumer-dominik/"
-    },
-    {
-        name: "Dribbble",
-        icon: Dribbble,
-        link: "https://dribbble.com/nussbaumer-dominik"
-    },
-    {
-        name: "Github",
-        icon: Github,
-        link: "https://github.com/nussbaumer-dominik"
-    },
-    {
-        name: "E-Mail",
-        icon: Mail,
-        link: "mailto:dominik@nussbaumer.dev"
-    },
-]
 ---
 
 <footer class="py-4 border-t border-gray-200">
     <div class="max-w-6xl mx-auto">
         <div class="flex flex-col md:flex-row justify-between items-center">
-            <div class="flex space-x-4 mb-4 md:mb-0">
-                {
-                    socials.map((social) => (
-                            <a href={social.link} target="_blank" rel="noopener noreferrer"
-                               class="text-gray-400 hover:text-gray-600">
-                                <span class="sr-only">{social.name}</span>
-                                <social.icon/>
-                            </a>
-                    ))
-                }
-            </div>
-            <div class="flex items-center space-x-4">
-                <Clock client:load/>
-                <Image
-                        src="/dragonite.gif"
-                        alt="Dragonite Sprite"
-                        class="w-8 h-8"
-                        width={32}
-                        height={32}
-                        loading="lazy"
-                />
-            </div>
+            <Image
+                    src="/dragonite.gif"
+                    alt="Dragonite Sprite"
+                    class="w-8 h-8"
+                    width={32}
+                    height={32}
+                    loading="lazy"
+            />
             <div class="flex items-center space-x-4 sm:order-2">
                 <a href="/colophon">
                     Colophon

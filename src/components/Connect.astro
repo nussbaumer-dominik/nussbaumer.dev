@@ -1,0 +1,45 @@
+---
+import SectionElement from "./SectionElement.astro";
+import {Dribbble, Github, Linkedin, Mail, Twitter} from "lucide-astro";
+
+const socials = [
+    {
+        name: "Twitter",
+        icon: Twitter,
+        link: "https://x.com/Do_Nuss"
+    },
+    {
+        name: "LinkedIn",
+        icon: Linkedin,
+        link: "https://www.linkedin.com/in/nussbaumer-dominik/"
+    },
+    {
+        name: "Dribbble",
+        icon: Dribbble,
+        link: "https://dribbble.com/nussbaumer-dominik"
+    },
+    {
+        name: "Github",
+        icon: Github,
+        link: "https://github.com/nussbaumer-dominik"
+    },
+    {
+        name: "E-Mail",
+        icon: Mail,
+        link: "mailto:dominik@nussbaumer.dev"
+    },
+]
+---
+<SectionElement title="CONNECT">
+    <div class="flex space-x-4 mb-4 md:mb-0">
+        {
+            socials.map((social) => (
+                    <a href={social.link} target="_blank" rel="noopener noreferrer"
+                       class="text-gray-400 hover:text-gray-600">
+                        <span class="sr-only">{social.name}</span>
+                        <social.icon/>
+                    </a>
+            ))
+        }
+    </div>
+</SectionElement>
