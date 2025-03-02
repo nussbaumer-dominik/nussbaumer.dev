@@ -4,24 +4,24 @@ import "../styles/base.css";
 import {ScreenSize} from "../components/ScreenSize";
 
 interface Props {
-    title?: string,
-    url?: string,
-    children?: any,
+  title?: string,
+  url?: string,
+  children?: any,
 }
 
 const {
-    title = "Dominik Nussbaumer | Full Stack Engineer",
-    url = "https://nussbaumer.dev"
+  title = "Dominik Nussbaumer | Full Stack Engineer",
+  url = "https://nussbaumer.dev"
 } = Astro.props;
 const meta = {
-    title: title,
-    author: "Dominik Nussbaumer",
-    url: url,
-    description: "Dominik Nussbaumer | Full Stack Engineer based in Austria, who loves the Web and is interested in clean design.",
-    keywords: "Dominik Nussbaumer, Personal Portfolio, Full Stack Engineer, Developer, Angular, HTML, CSS, Javascript, Java, Kotlin, Microservices, Kubernetes, Bachelor of Science, Computer Science, Software Engineering",
-    ogType: "website",
-    image: "https://nussbaumer.dev/nussbaumer-og.png",
-    imageAlt: "Dominik Nussbaumer Logo"
+  title: title,
+  author: "Dominik Nussbaumer",
+  url: url,
+  description: "Dominik Nussbaumer | Full Stack Engineer based in Austria, who loves the Web and is interested in clean design.",
+  keywords: "Dominik Nussbaumer, Personal Portfolio, Full Stack Engineer, Developer, Angular, HTML, CSS, Javascript, Java, Kotlin, Microservices, Kubernetes, Bachelor of Science, Computer Science, Software Engineering",
+  ogType: "website",
+  image: "https://nussbaumer.dev/nussbaumer-og.png",
+  imageAlt: "Dominik Nussbaumer Logo"
 }
 
 const isProd = import.meta.env.PROD;
@@ -32,37 +32,41 @@ const isDev = import.meta.env.DEV;
 <html lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <script async
+            type="text/partytown"
+            src="https://cloud.umami.is/script.js"
+            data-website-id="fe8dd2fe-0dd4-4ca6-923c-0b4c39749596"/>
     <SEO
             title={meta.title}
             description={meta.description}
             canonical={meta.url}
             charset="UTF-8"
             openGraph={{
-                basic: {
-                    title: meta.title,
-                    type: meta.ogType,
-                    url: meta.url,
-                    image: meta.image,
-                },
-                image: {
-                    url: meta.image,
-                    width: 1200,
-                    height: 600,
-                    alt: meta.imageAlt,
-                },
-                optional: {
-                    description: meta.description,
-                    locale: "en",
-                }
+              basic: {
+                title: meta.title,
+                type: meta.ogType,
+                url: meta.url,
+                image: meta.image,
+              },
+              image: {
+                url: meta.image,
+                width: 1200,
+                height: 600,
+                alt: meta.imageAlt,
+              },
+              optional: {
+                description: meta.description,
+                locale: "en",
+              }
             }}
             twitter={{
-                creator: "Do_Nuss",
-                card: "summary_large_image",
-                description: meta.description,
-                title: meta.title,
-                site: meta.url,
-                image: meta.image,
-                imageAlt: meta.imageAlt,
+              creator: "Do_Nuss",
+              card: "summary_large_image",
+              description: meta.description,
+              title: meta.title,
+              site: meta.url,
+              image: meta.image,
+              imageAlt: meta.imageAlt,
             }}
     />
     <meta name="author" content={meta.author}/>

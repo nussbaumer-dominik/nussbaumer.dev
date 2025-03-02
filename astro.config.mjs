@@ -7,16 +7,13 @@ import sitemap from '@astrojs/sitemap';
 
 import playformCompress from "@playform/compress";
 
+import partytown from "@astrojs/partytown";
+
 export default defineConfig({
     site: "https://nussbaumer.dev",
-    integrations: [
-        tailwind({
-            applyBaseStyles: false,
-        }),
-        solid(),
-        sitemap(),
-        playformCompress()
-    ],
+    integrations: [tailwind({
+        applyBaseStyles: false,
+    }), solid(), sitemap(), playformCompress(), partytown()],
     vite: {
         build: {
             rollupOptions: {
