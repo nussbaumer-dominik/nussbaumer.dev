@@ -32,10 +32,6 @@ const isDev = import.meta.env.DEV;
 <html lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <script async
-            type="text/partytown"
-            src="https://cloud.umami.is/script.js"
-            data-website-id="fe8dd2fe-0dd4-4ca6-923c-0b4c39749596"/>
     <SEO
             title={meta.title}
             description={meta.description}
@@ -74,19 +70,19 @@ const isDev = import.meta.env.DEV;
     <meta name="keywords" content={meta.keywords}/>
     <link rel="sitemap" href="/sitemap-index.xml"/>
 
-    <!-- {isProd && <script defer data-domain="nussbaumer.dev" src="https://analytics.spritkenig.com/js/script.js" data-category="analytics"/>} -->
     <!-- ADD Cookiebanner component and only add script if ok -->
     <link rel="icon" href="/favicon/favicon.ico" sizes="32x32"/>
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/>
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/>
-    <link
-            rel="shortcut icon"
-            type="image/png"
-            sizes="16x16"
-            href="/favicon/favicon-16x16.png"
-    />
+    <link rel="shortcut icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/>
     <link rel="manifest" href="favicon/site.webmanifest"/>
     <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#fff"/>
+  {isProd && <script async
+      type="text/partytown"
+      src="https://stats.home.nussbaumer.dev/script.js"
+      data-website-id="e1363121-eee2-4702-9ea9-93db20be368c"
+      crossOrigin="anonymous"
+      />}
 </head>
 <body class="min-h-screen bg-white text-gray-800">
 <slot/>
