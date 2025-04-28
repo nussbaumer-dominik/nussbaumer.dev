@@ -11,6 +11,9 @@ import partytown from "@astrojs/partytown";
 
 export default defineConfig({
     site: "https://nussbaumer.dev",
+    prefetch: {
+        prefetchAll: true,
+    },
     integrations: [tailwind({
         applyBaseStyles: false,
     }), solid(), sitemap(), playformCompress(), partytown()],
