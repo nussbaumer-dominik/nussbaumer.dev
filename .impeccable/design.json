@@ -1,0 +1,247 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-07-18T18:28:33Z",
+  "title": "Design System: nussbaumer.dev",
+  "extensions": {
+    "colorMeta": {
+      "canvas": {
+        "role": "neutral",
+        "displayName": "Clear White",
+        "canonical": "#ffffff",
+        "tonalRamp": ["#111827", "#1f2937", "#374151", "#4b5563", "#6b7280", "#9ca3af", "#e5e7eb", "#ffffff"]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Graphite Ink",
+        "canonical": "#1f2937",
+        "tonalRamp": ["#111827", "#1f2937", "#374151", "#4b5563", "#6b7280", "#9ca3af", "#e5e7eb", "#f9fafb"]
+      },
+      "ink-strong": {
+        "role": "neutral",
+        "displayName": "Strong Graphite",
+        "canonical": "#111827",
+        "tonalRamp": ["#111827", "#1f2937", "#374151", "#4b5563", "#6b7280", "#9ca3af", "#e5e7eb", "#f9fafb"]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Working Gray",
+        "canonical": "#6b7280",
+        "tonalRamp": ["#111827", "#1f2937", "#374151", "#4b5563", "#6b7280", "#9ca3af", "#e5e7eb", "#f9fafb"]
+      },
+      "quiet": {
+        "role": "neutral",
+        "displayName": "Quiet Gray",
+        "canonical": "#6b7280",
+        "tonalRamp": ["#111827", "#1f2937", "#374151", "#4b5563", "#6b7280", "#9ca3af", "#e5e7eb", "#f9fafb"]
+      },
+      "hairline": {
+        "role": "neutral",
+        "displayName": "Hairline Gray",
+        "canonical": "#e5e7eb",
+        "tonalRamp": ["#111827", "#1f2937", "#374151", "#4b5563", "#6b7280", "#9ca3af", "#e5e7eb", "#f9fafb"]
+      },
+      "available": {
+        "role": "primary",
+        "displayName": "Available Green",
+        "canonical": "#166534",
+        "tonalRamp": ["#052e16", "#14532d", "#166534", "#15803d", "#16a34a", "#22c55e", "#86efac", "#dcfce7"]
+      },
+      "available-surface": {
+        "role": "primary",
+        "displayName": "Available Green Surface",
+        "canonical": "#dcfce7",
+        "tonalRamp": ["#052e16", "#14532d", "#166534", "#15803d", "#16a34a", "#22c55e", "#86efac", "#dcfce7"]
+      },
+      "available-border": {
+        "role": "primary",
+        "displayName": "Available Green Border",
+        "canonical": "#4ade80",
+        "tonalRamp": ["#052e16", "#14532d", "#166534", "#15803d", "#16a34a", "#22c55e", "#86efac", "#dcfce7"]
+      },
+      "available-hover": {
+        "role": "primary",
+        "displayName": "Available Green Hover",
+        "canonical": "#86efac",
+        "tonalRamp": ["#052e16", "#14532d", "#166534", "#15803d", "#16a34a", "#22c55e", "#86efac", "#dcfce7"]
+      },
+      "reference": {
+        "role": "secondary",
+        "displayName": "Reference Blue",
+        "canonical": "#2563eb",
+        "tonalRamp": ["#172554", "#1e3a8a", "#1e40af", "#1d4ed8", "#2563eb", "#3b82f6", "#93c5fd", "#dbeafe"]
+      },
+      "selection": {
+        "role": "tertiary",
+        "displayName": "Selection Red",
+        "canonical": "#e74343",
+        "tonalRamp": ["#450a0a", "#7f1d1d", "#991b1b", "#b91c1c", "#e74343", "#f87171", "#fca5a5", "#fee2e2"]
+      },
+      "construction": {
+        "role": "tertiary",
+        "displayName": "Construction Yellow",
+        "canonical": "#facc15",
+        "tonalRamp": ["#422006", "#713f12", "#854d0e", "#a16207", "#ca8a04", "#eab308", "#facc15", "#fef9c3"]
+      }
+    },
+    "typographyMeta": {
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Page-level titles on supporting routes."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Identity and prominent timeline titles."
+      },
+      "body-large": {
+        "displayName": "Body Large",
+        "purpose": "The concise opening positioning statement."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Supporting descriptions and factual content."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Section labels and compact controls."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "state-transition",
+        "value": "150ms cubic-bezier(0.4, 0, 0.2, 1)",
+        "purpose": "Color and border feedback on interactive states."
+      },
+      {
+        "name": "logo-hover",
+        "value": "200ms cubic-bezier(0.4, 0, 0.2, 1)",
+        "purpose": "Restrained scale feedback on the profile mark."
+      },
+      {
+        "name": "page-entrance",
+        "value": "1000ms slide-up",
+        "purpose": "The single orchestrated entrance sequence."
+      },
+      {
+        "name": "page-stagger",
+        "value": "150ms",
+        "purpose": "Delay between sections in the entrance sequence."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Availability Status",
+      "kind": "chip",
+      "refersTo": "availability-status",
+      "description": "Communicates current availability as a compact mail link.",
+      "html": "<a class=\"ds-availability\" href=\"mailto:dominik@nussbaumer.dev\"><span class=\"ds-availability-dot\"></span>Open to work</a>",
+      "css": ".ds-availability { display: inline-flex; align-items: center; gap: 8px; padding: 8px; border: 1px solid #4ade80; border-radius: 9999px; background: #dcfce7; color: #166534; font: 500 14px/20px ui-sans-serif, system-ui, sans-serif; text-decoration: none; transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1); } .ds-availability:hover { background: #86efac; } .ds-availability:focus-visible { outline: 2px solid #1f2937; outline-offset: 3px; } .ds-availability-dot { width: 8px; height: 8px; border-radius: 9999px; background: #22c55e; }"
+    },
+    {
+      "name": "Section Label",
+      "kind": "custom",
+      "refersTo": "section-label",
+      "description": "A quiet structural label that moves into the left margin at large widths.",
+      "html": "<span class=\"ds-section-label\">PROJECTS</span>",
+      "css": ".ds-section-label { color: #6b7280; font: 600 14px/20px ui-sans-serif, system-ui, sans-serif; letter-spacing: normal; }"
+    },
+    {
+      "name": "Project Placeholder",
+      "kind": "card",
+      "refersTo": "project-placeholder",
+      "description": "A temporary bounded panel for unfinished portfolio sections.",
+      "html": "<div class=\"ds-placeholder\"><span class=\"ds-placeholder-mark\" aria-hidden=\"true\"><svg viewBox=\"0 0 24 24\"><path d=\"M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.8-3.8a6 6 0 0 1-7.9 7.9l-6.9 6.9a2.1 2.1 0 0 1-3-3l6.9-6.9a6 6 0 0 1 7.9-7.9l-3.8 3.8z\"/></svg></span><span>Under Construction</span></div>",
+      "css": ".ds-placeholder { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; padding: 24px; border: 1px solid #e5e7eb; border-radius: 8px; background: #ffffff; color: #4b5563; font: 500 14px/20px ui-sans-serif, system-ui, sans-serif; } .ds-placeholder-mark { display: grid; place-items: center; width: 64px; height: 64px; border-radius: 9999px; background: #facc15; color: #111827; } .ds-placeholder-mark svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }"
+    },
+    {
+      "name": "Timeline Entry",
+      "kind": "custom",
+      "description": "Pairs a quiet date with a strong education or work title on one structural rule.",
+      "html": "<div class=\"ds-timeline\"><span class=\"ds-timeline-dot\"></span><time datetime=\"2023-10\">October 2023 - Present</time><strong>Master in Software Engineering & Internet Computing</strong></div>",
+      "css": ".ds-timeline { position: relative; display: flex; flex-direction: column; gap: 4px; padding: 0 0 40px 16px; border-left: 1px solid #e5e7eb; font-family: ui-sans-serif, system-ui, sans-serif; } .ds-timeline-dot { position: absolute; top: 6px; left: -6px; width: 12px; height: 12px; border: 1px solid #ffffff; border-radius: 9999px; background: #e5e7eb; } .ds-timeline time { color: #6b7280; font-size: 14px; line-height: 20px; } .ds-timeline strong { color: #111827; font-size: 18px; line-height: 28px; }"
+    },
+    {
+      "name": "Inline Reference",
+      "kind": "nav",
+      "refersTo": "inline-reference",
+      "description": "Links supporting copy to source material without competing with primary content.",
+      "html": "<a class=\"ds-reference\" href=\"#\">View source</a>",
+      "css": ".ds-reference { color: #2563eb; font: 400 16px/24px ui-sans-serif, system-ui, sans-serif; text-decoration: none; } .ds-reference:hover { text-decoration: underline; } .ds-reference:focus-visible { outline: 2px solid #2563eb; outline-offset: 3px; }"
+    },
+    {
+      "name": "Footer Navigation",
+      "kind": "nav",
+      "description": "A plain, low-friction pair of supporting navigation links.",
+      "html": "<nav class=\"ds-footer-nav\"><a href=\"#\">Colophon</a><a href=\"#\">Imprint</a></nav>",
+      "css": ".ds-footer-nav { display: flex; align-items: center; gap: 16px; font: 400 16px/24px ui-sans-serif, system-ui, sans-serif; } .ds-footer-nav a { color: #1f2937; text-decoration: none; } .ds-footer-nav a:hover { text-decoration: underline; } .ds-footer-nav a:focus-visible { outline: 2px solid #1f2937; outline-offset: 3px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Proof Desk",
+    "overview": "The portfolio should feel like a well-prepared work surface: quiet enough to focus, exact enough to trust, and tactile enough to reveal a person behind the evidence. The narrow reading column, native typography, flat surfaces, and direct language keep attention on finished work rather than presentation tricks. Every visual decision should help a recruiter move from first impression to proof. Engineering credibility leads; design judgment appears in the quality of hierarchy, interaction, imagery, and finish. The system explicitly rejects generic SaaS styling, flashy agency effects, dense resume-like walls of text, and excessive animation.",
+    "keyCharacteristics": [
+      "Compact, evidence-forward composition.",
+      "Quiet, exact, and assured visual voice.",
+      "Native typography with a deliberately small scale.",
+      "Flat structure defined by spacing, hairlines, and alignment.",
+      "Tactile feedback reserved for real interactive states."
+    ],
+    "rules": [
+      {
+        "name": "The Evidence Rule",
+        "body": "Every prominent visual element must either establish identity, expose proof, or help the visitor act.",
+        "section": "overview"
+      },
+      {
+        "name": "The Scarcity Rule",
+        "body": "Saturated color must name a state, a reference, or an exception. If color has no job, remove it.",
+        "section": "colors"
+      },
+      {
+        "name": "The Native Clarity Rule",
+        "body": "Typography must load instantly and read like interface copy, not a styled editorial artifact.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat-by-Default Rule",
+        "body": "Never add a drop shadow to make a component feel finished. Use spacing, border contrast, or an intentional state change.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Tactile Restraint Rule",
+        "body": "Interaction feedback must be obvious at the pointer or keyboard focus, then disappear without leaving decorative residue.",
+        "section": "components"
+      }
+    ],
+    "dos": [
+      "Do place selected work and its evidence before biography detail.",
+      "Do use real product imagery, GitHub activity, client or employer marks, and measurable outcomes as proof.",
+      "Do preserve the narrow reading measure and the established spacing rhythm.",
+      "Do use Available Green, Reference Blue, Selection Red, and Construction Yellow only for their named jobs.",
+      "Do provide visible focus states, semantic markup, strong contrast, keyboard access, and reduced-motion alternatives for WCAG 2.2 AA."
+    ],
+    "donts": [
+      "Don't use generic SaaS styling.",
+      "Don't use flashy agency effects.",
+      "Don't turn pages into dense resume-like walls of text.",
+      "Don't use excessive animation; entrance motion must support an already-visible default and respect reduced motion.",
+      "Don't add gradient text, decorative glass surfaces, wide soft shadows, or oversized card radii.",
+      "Don't repeat tiny tracked eyebrow copy above every section heading."
+    ]
+  }
+}
