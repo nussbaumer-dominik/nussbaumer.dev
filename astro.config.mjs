@@ -1,6 +1,6 @@
 // @ts-check
 import {defineConfig} from 'astro/config';
-import tailwind from '@astrojs/tailwind';
+import tailwindcss from '@tailwindcss/vite';
 import solid from "@astrojs/solid-js";
 
 import sitemap from '@astrojs/sitemap';
@@ -15,13 +15,19 @@ const __impeccableLiveDev =
 
 export default defineConfig({
     site: "https://nussbaumer.dev",
+    // Keep v6 whitespace handling: the v7 default ('jsx') strips spaces
+    // between text and inline elements across line breaks ("on <a>" → "on<a>").
+    compressHTML: true,
     prefetch: {
         prefetchAll: true,
     },
-    integrations: [tailwind({
-        applyBaseStyles: false,
-    }), solid(), sitemap(), playformCompress(), partytown()],
+    integrations: [solid(), sitemap(), playformCompress({
+        // Disabled: the default csso processor drops Tailwind v4's
+        // `@media (width >= …)` range syntax, breaking responsive variants.
+        CSS: false,
+    }), partytown()],
     vite: {
+        plugins: [tailwindcss()],
         build: {
             rollupOptions: {
                 output: {
