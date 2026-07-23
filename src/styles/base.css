@@ -2,7 +2,7 @@
 
 @plugin "tailwindcss-motion";
 
-::-moz-selection, ::selection {
+::selection {
     background: rgba(231, 67, 67, 0.2);
     color: rgb(231, 67, 67);
 }
