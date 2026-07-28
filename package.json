@@ -21,11 +21,17 @@
   "devDependencies": {
     "@astrojs/check": "^0.9.9",
     "@astrojs/sitemap": "^3.7.3",
+    "@emnapi/core": "^1.7.1",
+    "@emnapi/runtime": "^1.7.1",
     "@tailwindcss/vite": "^4.3.3",
     "astro-seo": "^1.1.0",
     "tailwindcss": "^4.3.3",
     "tailwindcss-motion": "^1.1.1",
-    "typescript": "^5.6.3"
+    "typescript": "^5.6.3",
+    "vite": "^8.0.13"
+  },
+  "resolutions": {
+    "@astrojs/check": "^0.9.9"
   },
   "engines": {
     "node": ">=v24"
