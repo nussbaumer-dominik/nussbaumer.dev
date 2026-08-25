@@ -10,6 +10,6 @@ const {items} = Astro.props;
 ---
 <ol class="relative border-s border-gray-200">
     {items.map((item, index) => (
-            <TimeLineItem item={item} key={index} class={index === items.length - 1 ? "ms-4" : "mb-10 ms-4"}/>
+            <TimeLineItem item={item} class={index === items.length - 1 ? "ms-4" : "mb-10 ms-4"}/>
     ))}
 </ol>
