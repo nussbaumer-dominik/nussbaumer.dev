@@ -203,16 +203,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@astrojs/partytown@npm:^2.1.7":
-  version: 2.1.7
-  resolution: "@astrojs/partytown@npm:2.1.7"
-  dependencies:
-    "@qwik.dev/partytown": "npm:^0.13.2"
-    mrmime: "npm:^2.0.1"
-  checksum: 10c0/79cfb520bee5155a5069a463a5cba917a42b3ec9109da2a63935a547fd95cc26571422929bcecd5f198536e91b341846c79aae3592f499ad0ba43d180a8024fa
-  languageName: node
-  linkType: hard
-
 "@astrojs/prism@npm:4.0.2":
   version: 4.0.2
   resolution: "@astrojs/prism@npm:4.0.2"
@@ -1289,17 +1279,6 @@ __metadata:
     deepmerge-ts: "npm:7.1.5"
     fast-glob: "npm:3.3.3"
   checksum: 10c0/24a1bd596e52cfc3e1e60b257dcd718f8d4ee6950e28aee67550a835c8dc09d54c8d275f87fae794faf259d1c8d790abb8b09f49804825660241cbd96f34bbc0
-  languageName: node
-  linkType: hard
-
-"@qwik.dev/partytown@npm:^0.13.2":
-  version: 0.13.2
-  resolution: "@qwik.dev/partytown@npm:0.13.2"
-  dependencies:
-    dotenv: "npm:^16.4.7"
-  bin:
-    partytown: bin/partytown.cjs
-  checksum: 10c0/46bb1c36fdd28d5fdc13abf6fe33af15deba1d1e0e2290e042f218e6ca61e92cd82403880ab7c7b27a389770e549c31c97dab8b5919bb6c4a7fdce7b33ec3b2b
   languageName: node
   linkType: hard
 
@@ -2558,13 +2537,6 @@ __metadata:
     no-case: "npm:^3.0.4"
     tslib: "npm:^2.0.3"
   checksum: 10c0/5b859ea65097a7ea870e2c91b5768b72ddf7fa947223fd29e167bcdff58fe731d941c48e47a38ec8aa8e43044c8fbd15cd8fa21689a526bc34b6548197cd5b05
-  languageName: node
-  linkType: hard
-
-"dotenv@npm:^16.4.7":
-  version: 16.6.1
-  resolution: "dotenv@npm:16.6.1"
-  checksum: 10c0/15ce56608326ea0d1d9414a5c8ee6dcf0fffc79d2c16422b4ac2268e7e2d76ff5a572d37ffe747c377de12005f14b3cc22361e79fc7f1061cce81f77d2c973dc
   languageName: node
   linkType: hard
 
@@ -3913,7 +3885,6 @@ __metadata:
   resolution: "nussbaumer.dev@workspace:."
   dependencies:
     "@astrojs/check": "npm:^0.9.10"
-    "@astrojs/partytown": "npm:^2.1.7"
     "@astrojs/sitemap": "npm:^3.7.3"
     "@astrojs/solid-js": "npm:^7.0.2"
     "@emnapi/core": "npm:^1.11.3"

@@ -6,3 +6,12 @@
     background: rgba(231, 67, 67, 0.2);
     color: rgb(231, 67, 67);
 }
+
+/* Disable entry animations, ping pulses, and transitions for users who ask for less motion. */
+@media (prefers-reduced-motion: reduce) {
+    *, ::before, ::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
