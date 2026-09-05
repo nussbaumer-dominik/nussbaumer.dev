@@ -76,10 +76,15 @@ const isDev = import.meta.env.DEV;
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/>
     <link rel="shortcut icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/>
     <link rel="manifest" href="/favicon/site.webmanifest"/>
-  {isProd && <script is:inline
+    {isProd && <script is:inline
       async
       src="https://stats.home.nussbaumer.dev/script.js"
       data-website-id="e1363121-eee2-4702-9ea9-93db20be368c"/>}
+      
+    {isProd && <script is:inline 
+      defer 
+      src="http://analytics.home.nussbaumer.dev/glance.js" 
+      data-site="site_qs5bkhwduyhgrnc2"/>}
 </head>
 <body class="min-h-screen bg-white text-gray-800">
 <slot/>
