@@ -27,7 +27,7 @@
     "tailwindcss": "^4.3.3",
     "tailwindcss-motion": "^1.1.1",
     "typescript": "^6.0.3",
-    "vite": "^8.3.2"
+    "vite": "^8.3.3"
   },
   "resolutions": {
     "@astrojs/check": "^0.9.10"
