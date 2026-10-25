@@ -4127,6 +4127,7 @@ __metadata:
     tailwindcss: "npm:^4.3.3"
     tailwindcss-motion: "npm:^1.1.1"
     typescript: "npm:^6.0.3"
+    vite: "npm:^8.3.3"
   languageName: unknown
   linkType: soft
 
@@ -5411,7 +5412,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite@npm:^8.0.13":
+"vite@npm:^8.0.13, vite@npm:^8.3.3":
   version: 8.3.5
   resolution: "vite@npm:8.3.5"
   dependencies:
