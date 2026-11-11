@@ -1,0 +1,100 @@
+---
+import SectionElement from "./SectionElement.astro";
+import WorkFigure from "./WorkFigure.astro";
+import { ArrowUpRight } from "lucide-astro";
+
+type WorkEntry = {
+    slug: string;
+    title: string;
+    meta: string;
+    description: string;
+    outcome?: string;
+    stack?: string;
+    links: { label: string; href: string }[];
+};
+
+const entries: WorkEntry[] = [
+    {
+        slug: "spritkenig",
+        title: "Spritkenig",
+        meta: "Personal product · Live",
+        description:
+            "Fuel tracking and management app. I designed and built the product website: " +
+            "server-rendered Astro on Cloudflare Workers, bilingual German and English, " +
+            "with blog, changelog, and feedback flows.",
+        outcome: "Live in production at spritkenig.com.",
+        stack: "Astro · Tailwind CSS · Cloudflare Workers",
+        links: [{ label: "spritkenig.com", href: "https://spritkenig.com" }],
+    },
+    {
+        slug: "raab-und-raab",
+        title: "Raab & Raab",
+        meta: "Freelance client · Team of three",
+        description:
+            "Digitalized heat-cost calculation for large rental properties: readings from " +
+            "Qundis metering hardware replace manual on-site collection. Built freelance " +
+            "with two colleagues.",
+        links: [],
+    },
+    {
+        slug: "bachelor-thesis",
+        title: "Graph queries: Neo4j vs. PostgreSQL",
+        meta: "Bachelor thesis · TU Wien",
+        description:
+            "Comparative study of graph data modeling and querying in a native graph " +
+            "database versus a relational one, benchmarked with LDBC SNB and LSQB across " +
+            "nine query patterns. Fully reproducible: Dockerized setup, scripted runs, " +
+            "generated evaluation graphs.",
+        outcome: "Completed 2024 as part of the bachelor's degree.",
+        stack: "Python · Cypher · PL/pgSQL · Docker",
+        links: [{ label: "Source", href: "https://github.com/nussbaumer-dominik/bachelor_project" }],
+    },
+    {
+        slug: "federated-learning",
+        title: "Federated learning on serverless",
+        meta: "University project · Team of three",
+        description:
+            "Federated learning implemented on Apache OpenWhisk: training rounds fan out " +
+            "to serverless functions, coordinated through Kafka with model state in MinIO, " +
+            "running on a kind Kubernetes cluster. Clients, rounds, and selection are configurable.",
+        outcome: "Completed for the Serverless Computing course, winter term 2023.",
+        stack: "Python · OpenWhisk · Kubernetes · Kafka",
+        links: [{ label: "Source", href: "https://github.com/r-gg/serverless-computing" }],
+    },
+];
+---
+<SectionElement title="SELECTED WORK" id="work">
+    <ul class="space-y-12">
+        {entries.map((entry) => (
+                <li>
+                    <article>
+                        <WorkFigure slug={entry.slug} alt={`${entry.title} — product screenshot`}/>
+                        <div class="mt-4 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+                            <h3 class="text-lg font-semibold text-gray-900">{entry.title}</h3>
+                            <p class="text-sm text-gray-500">{entry.meta}</p>
+                        </div>
+                        <p class="mt-2 text-gray-800">{entry.description}</p>
+                        {entry.outcome && (
+                                <p class="mt-2 text-gray-800"><span class="font-semibold">Outcome:</span> {entry.outcome}</p>
+                        )}
+                        {(entry.stack || entry.links.length > 0) && (
+                                <div class="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1">
+                                    {entry.links.map((link) => (
+                                            <a
+                                                    href={link.href}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    class="inline-flex items-center gap-0.5 text-sm font-medium text-blue-600 hover:underline underline-offset-4"
+                                            >
+                                                {link.label}<ArrowUpRight class="w-4 h-4" aria-hidden="true"/>
+                                                <span class="sr-only">(opens in a new tab)</span>
+                                            </a>
+                                    ))}
+                                    {entry.stack && <p class="text-sm text-gray-500">{entry.stack}</p>}
+                                </div>
+                        )}
+                    </article>
+                </li>
+        ))}
+    </ul>
+</SectionElement>

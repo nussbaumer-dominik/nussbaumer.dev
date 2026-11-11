@@ -23,6 +23,12 @@ export default defineConfig({
         // Disabled: the default csso processor drops Tailwind v4's
         // `@media (width >= …)` range syntax, breaking responsive variants.
         CSS: false,
+        HTML: {
+            "html-minifier-terser": {
+                // Keep the design-direction contract comment auditable in production.
+                ignoreCustomComments: [/THESIS:/],
+            },
+        },
     })],
     vite: {
         plugins: [tailwindcss()],

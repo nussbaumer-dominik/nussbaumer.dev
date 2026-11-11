@@ -1,9 +1,35 @@
 ---
 import SectionElement from "./SectionElement.astro"
+import {ArrowDown, Download, Linkedin} from "lucide-astro";
 ---
 <SectionElement title="ABOUT" isMobile={true}>
-    <p class="text-lg leading-6">
-        I'm a Full Stack Engineer from Austria that loves design and everything about the web. Currently I am writing my
-        master's thesis in distributed systems at the University of Technology Vienna.
-    </p>
+    <div>
+        <p class="text-lg leading-6">
+            I'm a Full Stack Engineer from Austria that loves design and everything about the web. Currently I am
+            writing my master's thesis in distributed systems at the University of Technology Vienna.
+        </p>
+        <div class="mt-6 flex flex-wrap items-center gap-x-5 gap-y-3">
+            <a
+                    href="#work"
+                    class="inline-flex items-center gap-1.5 bg-gray-900 text-white text-sm font-medium px-4 py-2.5 rounded-lg hover:bg-gray-700 transition-colors"
+            >
+                View selected work<ArrowDown class="w-4 h-4" aria-hidden="true"/>
+            </a>
+            <a
+                    href="/resume.pdf"
+                    download
+                    class="inline-flex items-center gap-1.5 text-sm font-medium text-gray-700 hover:text-gray-900 underline underline-offset-4"
+            >
+                <Download class="w-4 h-4" aria-hidden="true"/>Download resume
+            </a>
+            <a
+                    href="https://www.linkedin.com/in/nussbaumer-dominik/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-1.5 text-sm font-medium text-gray-700 hover:text-gray-900 underline underline-offset-4"
+            >
+                <Linkedin class="w-4 h-4" aria-hidden="true"/>LinkedIn<span class="sr-only"> (opens in a new tab)</span>
+            </a>
+        </div>
+    </div>
 </SectionElement>
