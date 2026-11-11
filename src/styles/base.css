@@ -7,11 +7,26 @@
     color: rgb(231, 67, 67);
 }
 
-/* Disable entry animations, ping pulses, and transitions for users who ask for less motion. */
+:focus-visible {
+    outline: 2px solid #1f2937;
+    outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
+/* Reduced motion: sections render in place instead of sliding up, and the
+   availability ping collapses to its static dot. Color transitions on
+   hover/focus are kept — they are state feedback, not motion. */
 @media (prefers-reduced-motion: reduce) {
-    *, ::before, ::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
+    [class*="motion-preset"] {
+        animation: none !important;
+    }
+
+    .animate-ping {
+        display: none;
     }
 }
